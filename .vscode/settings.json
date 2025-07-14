@@ -1,0 +1,20 @@
+{
+  "tailwindCSS.includeLanguages": {
+    "html.erb": "html"
+  },
+  "headwind.runOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "[erb]": {
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "elia.erb-formatter",
+    "editor.formatOnSave": true
+  },
+  "prettier.semi": false,
+  "prettier.trailingComma": "none",
+  "prettier.singleQuote": false,
+  "files.associations": {
+    "*.html.erb": "erb"
+  },
+  "erb-formatter.lineLength": 180
+}

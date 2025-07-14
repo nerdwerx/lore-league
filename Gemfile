@@ -56,7 +56,7 @@ end
 
 group :development do
   # For linting ERB files [https://github.com/Shopify/erb-lint]
-  gem "erb_lint", "~> 0.9.0"
+  gem "erb-formatter", "~> 0.7.3", require: false
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
