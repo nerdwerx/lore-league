@@ -49,8 +49,6 @@ RUN bundle exec bootsnap precompile app/ lib/
 RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 
 
-
-
 # Final stage for app image
 FROM base
 
@@ -59,9 +57,9 @@ COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --from=build /rails /rails
 
 # Run and own only the runtime files as a non-root user for security
-RUN groupadd --system --gid 1000 rails && \
-    useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
-    chown -R rails:rails db log storage tmp
+RUN groupadd --system --gid 1000 rails
+RUN useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash
+RUN chown -R rails:rails db log storage tmp
 USER 1000:1000
 
 # Entrypoint prepares the database.
